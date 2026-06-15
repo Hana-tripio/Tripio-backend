@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3260" height="1880" viewBox="0 0 3260 1880" role="img" aria-labelledby="title desc">
+  <title id="title">TRIPIO ERD v1</title>
+  <desc id="desc">TRIPIO PostgreSQL entity relationship diagram with 25 core tables.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#475569" />
+    </marker>
+    <style>
+      .page-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 34px; font-weight: 800; fill: #0f172a; }
+      .page-subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; fill: #475569; }
+      .group { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; font-weight: 700; fill: #ccfbf1; }
+      .name { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 17px; font-weight: 800; fill: #ffffff; }
+      .key { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 800; }
+      .col { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 13px; fill: #0f172a; }
+      .type { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; fill: #64748b; }
+      .rel { fill: none; stroke: #475569; stroke-width: 1.4; stroke-dasharray: 5 4; opacity: 0.78; }
+      .rel-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 12px; font-weight: 700; fill: #334155; paint-order: stroke; stroke: #f8fafc; stroke-width: 4px; }
+    </style>
+  </defs>
+  <rect width="3260" height="1880" fill="#f8fafc" />
+  <text x="80" y="48" class="page-title">TRIPIO ERD v1</text>
+  <text x="80" y="78" class="page-subtitle">PostgreSQL 기준 핵심 25개 테이블. A/B/C 백엔드 역할 분담과 API 설계 전 합의를 위한 전체 ERD.</text>
+  <g id="relations">
+    
+    <path d="M 295 378 L 295 378 L 295 430 L 295 430" class="rel" marker-end="url(#arrow)" />
+    <text x="301" y="399" class="rel-label">1:1</text>
+  
+
+    <path d="M 835 90 L 835 90 L 835 90 L 835 90" class="rel" marker-end="url(#arrow)" />
+    <text x="841" y="105" class="rel-label">parent</text>
+  
+
+    <path d="M 620 258 L 565 258 L 565 550 L 510 550" class="rel" marker-end="url(#arrow)" />
+    <text x="571" y="399" class="rel-label">preferred</text>
+  
+
+    <path d="M 835 426 L 835 426 L 835 480 L 835 480" class="rel" marker-end="url(#arrow)" />
+    <text x="841" y="468" class="rel-label">1:N</text>
+  
+
+    <path d="M 835 426 L 835 426 L 835 1030 L 835 1030" class="rel" marker-end="url(#arrow)" />
+    <text x="841" y="723" class="rel-label">1:N</text>
+  
+
+    <path d="M 295 378 L 295 378 L 295 940 L 295 940" class="rel" marker-end="url(#arrow)" />
+    <text x="301" y="674" class="rel-label">1:N</text>
+  
+
+    <path d="M 295 884 L 295 884 L 295 940 L 295 940" class="rel" marker-end="url(#arrow)" />
+    <text x="301" y="907" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 234 L 835 234 L 835 354 L 1160 354" class="rel" marker-end="url(#arrow)" />
+    <text x="841" y="309" class="rel-label">owns</text>
+  
+
+    <path d="M 1050 258 L 1105 258 L 1105 354 L 1160 354" class="rel" marker-end="url(#arrow)" />
+    <text x="1111" y="301" class="rel-label">targets</text>
+  
+
+    <path d="M 1375 618 L 1375 618 L 1375 710 L 1375 710" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="679" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 812 L 835 812 L 835 782 L 1160 782" class="rel" marker-end="url(#arrow)" />
+    <text x="841" y="792" class="rel-label">1:N</text>
+  
+
+    <path d="M 1375 618 L 1375 618 L 1375 910 L 1375 910" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="779" class="rel-label">1:N</text>
+  
+
+    <path d="M 1375 1102 L 1375 1102 L 1375 1160 L 1375 1160" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="1126" class="rel-label">1:N</text>
+  
+
+    <path d="M 835 936 L 1105 936 L 1105 1160 L 1375 1160" class="rel" marker-end="url(#arrow)" />
+    <text x="1111" y="1063" class="rel-label">used</text>
+  
+
+    <path d="M 1375 618 L 1375 618 L 1375 1540 L 1375 1540" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="1074" class="rel-label">1:1</text>
+  
+
+    <path d="M 510 234 L 1105 234 L 1105 306 L 1700 306" class="rel" marker-end="url(#arrow)" />
+    <text x="1111" y="285" class="rel-label">creates</text>
+  
+
+    <path d="M 1590 354 L 1645 354 L 1645 306 L 1700 306" class="rel" marker-end="url(#arrow)" />
+    <text x="1651" y="325" class="rel-label">source/saved</text>
+  
+
+    <path d="M 1050 258 L 1375 258 L 1375 306 L 1700 306" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="297" class="rel-label">targets</text>
+  
+
+    <path d="M 1915 522 L 1915 522 L 1915 590 L 1915 590" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="551" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 812 L 1105 812 L 1105 662 L 1700 662" class="rel" marker-end="url(#arrow)" />
+    <text x="1111" y="752" class="rel-label">1:N</text>
+  
+
+    <path d="M 1915 522 L 1915 522 L 1915 790 L 1915 790" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="651" class="rel-label">1:N</text>
+  
+
+    <path d="M 1915 982 L 1915 982 L 1915 1040 L 1915 1040" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="1026" class="rel-label">1:N</text>
+  
+
+    <path d="M 1050 708 L 1375 708 L 1375 1232 L 1700 1232" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="965" class="rel-label">used</text>
+  
+
+    <path d="M 1590 1328 L 1645 1328 L 1645 1232 L 1700 1232" class="rel" marker-end="url(#arrow)" />
+    <text x="1651" y="1295" class="rel-label">copied</text>
+  
+
+    <path d="M 510 234 L 1375 234 L 1375 174 L 2240 174" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="199" class="rel-label">1:N</text>
+  
+
+    <path d="M 1590 354 L 1915 354 L 1915 174 L 2240 174" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="279" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 234 L 1375 234 L 1375 394 L 2240 394" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="309" class="rel-label">1:N</text>
+  
+
+    <path d="M 1590 354 L 1915 354 L 1915 394 L 2240 394" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="389" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 234 L 1375 234 L 1375 626 L 2240 626" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="425" class="rel-label">1:N</text>
+  
+
+    <path d="M 1590 354 L 1915 354 L 1915 626 L 2240 626" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="505" class="rel-label">source</text>
+  
+
+    <path d="M 2130 306 L 2185 306 L 2185 626 L 2240 626" class="rel" marker-end="url(#arrow)" />
+    <text x="2191" y="461" class="rel-label">created</text>
+  
+
+    <path d="M 510 234 L 1375 234 L 1375 888 L 2240 888" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="576" class="rel-label">1:N</text>
+  
+
+    <path d="M 1590 354 L 1915 354 L 1915 888 L 2240 888" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="616" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 234 L 1375 234 L 1375 1222 L 2240 1222" class="rel" marker-end="url(#arrow)" />
+    <text x="1381" y="743" class="rel-label">1:N</text>
+  
+
+    <path d="M 1590 354 L 1915 354 L 1915 1222 L 2240 1222" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="783" class="rel-label">executes</text>
+  
+
+    <path d="M 510 234 L 1645 234 L 1645 294 L 2780 294" class="rel" marker-end="url(#arrow)" />
+    <text x="1651" y="279" class="rel-label">1:N</text>
+  
+
+    <path d="M 1050 258 L 1915 258 L 1915 294 L 2780 294" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="271" class="rel-label">paid in</text>
+  
+
+    <path d="M 2670 1222 L 2725 1222 L 2725 748 L 2780 748" class="rel" marker-end="url(#arrow)" />
+    <text x="2731" y="1000" class="rel-label">1:N</text>
+  
+
+    <path d="M 2995 498 L 2995 498 L 2995 580 L 2995 580" class="rel" marker-end="url(#arrow)" />
+    <text x="3001" y="534" class="rel-label">verifies</text>
+  
+
+    <path d="M 1050 708 L 1915 708 L 1915 748 L 2780 748" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="743" class="rel-label">matched</text>
+  
+
+    <path d="M 510 234 L 1645 234 L 1645 1124 L 2780 1124" class="rel" marker-end="url(#arrow)" />
+    <text x="1651" y="674" class="rel-label">1:N</text>
+  
+
+    <path d="M 2670 1222 L 2725 1222 L 2725 1124 L 2780 1124" class="rel" marker-end="url(#arrow)" />
+    <text x="2731" y="1188" class="rel-label">1:N</text>
+  
+
+    <path d="M 1050 258 L 1915 258 L 1915 1124 L 2780 1124" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="686" class="rel-label">1:N</text>
+  
+
+    <path d="M 510 234 L 1645 234 L 1645 1486 L 2780 1486" class="rel" marker-end="url(#arrow)" />
+    <text x="1651" y="875" class="rel-label">1:N</text>
+  
+
+    <path d="M 1050 258 L 1915 258 L 1915 1486 L 2780 1486" class="rel" marker-end="url(#arrow)" />
+    <text x="1921" y="867" class="rel-label">1:N</text>
+  
+
+    <path d="M 2670 1222 L 2725 1222 L 2725 1486 L 2780 1486" class="rel" marker-end="url(#arrow)" />
+    <text x="2731" y="1369" class="rel-label">1:N</text>
+  
+  </g>
+  <g id="tables">
+    
+    <g id="table-users">
+      <rect x="80" y="90" width="430" height="288" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="80" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="80" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="94" y="107" class="group">C. User</text>
+      <rect x="80" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="94" y="137" class="name">users</text>
+      
+        <rect x="80" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="164" class="key" fill="#b45309">PK</text>
+        <text x="166" y="164" class="col">id</text>
+        <text x="358" y="164" class="type">BIGINT</text>
+      
+        <rect x="80" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="188" class="key" fill="#64748b">UK</text>
+        <text x="166" y="188" class="col">email</text>
+        <text x="358" y="188" class="type">VARCHAR(255)</text>
+      
+        <rect x="80" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="212" class="key" fill="#64748b"></text>
+        <text x="166" y="212" class="col">password_hash</text>
+        <text x="358" y="212" class="type">VARCHAR(255)</text>
+      
+        <rect x="80" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="236" class="key" fill="#64748b"></text>
+        <text x="166" y="236" class="col">nickname</text>
+        <text x="358" y="236" class="type">VARCHAR(50)</text>
+      
+        <rect x="80" y="244" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="260" class="key" fill="#64748b"></text>
+        <text x="166" y="260" class="col">travel_style</text>
+        <text x="358" y="260" class="type">VARCHAR(100)</text>
+      
+        <rect x="80" y="268" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="284" class="key" fill="#64748b"></text>
+        <text x="166" y="284" class="col">reward_point</text>
+        <text x="358" y="284" class="type">BIGINT</text>
+      
+        <rect x="80" y="292" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="308" class="key" fill="#64748b"></text>
+        <text x="166" y="308" class="col">status</text>
+        <text x="358" y="308" class="type">VARCHAR(30)</text>
+      
+        <rect x="80" y="316" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="332" class="key" fill="#64748b"></text>
+        <text x="166" y="332" class="col">created_at</text>
+        <text x="358" y="332" class="type">TIMESTAMP</text>
+      
+        <rect x="80" y="340" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="356" class="key" fill="#64748b"></text>
+        <text x="166" y="356" class="col">updated_at</text>
+        <text x="358" y="356" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-user_profiles">
+      <rect x="80" y="430" width="430" height="240" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="80" y="430" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="80" y="444" width="430" height="10" fill="#0f766e" />
+      <text x="94" y="447" class="group">C. User</text>
+      <rect x="80" y="454" width="430" height="34" fill="#0f172a" />
+      <text x="94" y="477" class="name">user_profiles</text>
+      
+        <rect x="80" y="488" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="504" class="key" fill="#b45309">PK</text>
+        <text x="166" y="504" class="col">id</text>
+        <text x="358" y="504" class="type">BIGINT</text>
+      
+        <rect x="80" y="512" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="528" class="key" fill="#2563eb">FK</text>
+        <text x="166" y="528" class="col">user_id</text>
+        <text x="358" y="528" class="type">BIGINT</text>
+      
+        <rect x="80" y="536" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="552" class="key" fill="#64748b"></text>
+        <text x="166" y="552" class="col">profile_image_url</text>
+        <text x="358" y="552" class="type">VARCHAR(500)</text>
+      
+        <rect x="80" y="560" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="576" class="key" fill="#64748b"></text>
+        <text x="166" y="576" class="col">introduction</text>
+        <text x="358" y="576" class="type">VARCHAR(1000)</text>
+      
+        <rect x="80" y="584" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="600" class="key" fill="#2563eb">FK</text>
+        <text x="166" y="600" class="col">preferred_region_id</text>
+        <text x="358" y="600" class="type">BIGINT</text>
+      
+        <rect x="80" y="608" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="624" class="key" fill="#64748b"></text>
+        <text x="166" y="624" class="col">created_at</text>
+        <text x="358" y="624" class="type">TIMESTAMP</text>
+      
+        <rect x="80" y="632" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="648" class="key" fill="#64748b"></text>
+        <text x="166" y="648" class="col">updated_at</text>
+        <text x="358" y="648" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-style_tags">
+      <rect x="80" y="740" width="430" height="144" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="80" y="740" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="80" y="754" width="430" height="10" fill="#0f766e" />
+      <text x="94" y="757" class="group">Common</text>
+      <rect x="80" y="764" width="430" height="34" fill="#0f172a" />
+      <text x="94" y="787" class="name">style_tags</text>
+      
+        <rect x="80" y="798" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="814" class="key" fill="#b45309">PK</text>
+        <text x="166" y="814" class="col">id</text>
+        <text x="358" y="814" class="type">BIGINT</text>
+      
+        <rect x="80" y="822" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="838" class="key" fill="#64748b">UK</text>
+        <text x="166" y="838" class="col">name</text>
+        <text x="358" y="838" class="type">VARCHAR(50)</text>
+      
+        <rect x="80" y="846" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="862" class="key" fill="#64748b"></text>
+        <text x="166" y="862" class="col">created_at</text>
+        <text x="358" y="862" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-user_preferred_style_tags">
+      <rect x="80" y="940" width="430" height="144" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="80" y="940" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="80" y="954" width="430" height="10" fill="#0f766e" />
+      <text x="94" y="957" class="group">C. User</text>
+      <rect x="80" y="964" width="430" height="34" fill="#0f172a" />
+      <text x="94" y="987" class="name">user_preferred_style_tags</text>
+      
+        <rect x="80" y="998" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="1014" class="key" fill="#b45309">PK/FK</text>
+        <text x="166" y="1014" class="col">user_id</text>
+        <text x="358" y="1014" class="type">BIGINT</text>
+      
+        <rect x="80" y="1022" width="430" height="24" fill="#f8fafc" />
+        <text x="94" y="1038" class="key" fill="#b45309">PK/FK</text>
+        <text x="166" y="1038" class="col">style_tag_id</text>
+        <text x="358" y="1038" class="type">BIGINT</text>
+      
+        <rect x="80" y="1046" width="430" height="24" fill="#ffffff" />
+        <text x="94" y="1062" class="key" fill="#64748b"></text>
+        <text x="166" y="1062" class="col">created_at</text>
+        <text x="358" y="1062" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-regions">
+      <rect x="620" y="90" width="430" height="336" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="620" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="620" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="634" y="107" class="group">C. Region</text>
+      <rect x="620" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="634" y="137" class="name">regions</text>
+      
+        <rect x="620" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="164" class="key" fill="#b45309">PK</text>
+        <text x="706" y="164" class="col">id</text>
+        <text x="898" y="164" class="type">BIGINT</text>
+      
+        <rect x="620" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="188" class="key" fill="#2563eb">FK</text>
+        <text x="706" y="188" class="col">parent_region_id</text>
+        <text x="898" y="188" class="type">BIGINT</text>
+      
+        <rect x="620" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="212" class="key" fill="#64748b"></text>
+        <text x="706" y="212" class="col">name</text>
+        <text x="898" y="212" class="type">VARCHAR(100)</text>
+      
+        <rect x="620" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="236" class="key" fill="#64748b"></text>
+        <text x="706" y="236" class="col">region_type</text>
+        <text x="898" y="236" class="type">VARCHAR(30)</text>
+      
+        <rect x="620" y="244" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="260" class="key" fill="#64748b"></text>
+        <text x="706" y="260" class="col">latitude</text>
+        <text x="898" y="260" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="620" y="268" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="284" class="key" fill="#64748b"></text>
+        <text x="706" y="284" class="col">longitude</text>
+        <text x="898" y="284" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="620" y="292" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="308" class="key" fill="#64748b"></text>
+        <text x="706" y="308" class="col">per_score</text>
+        <text x="898" y="308" class="type">INTEGER</text>
+      
+        <rect x="620" y="316" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="332" class="key" fill="#64748b"></text>
+        <text x="706" y="332" class="col">local_contribution_base_score</text>
+        <text x="898" y="332" class="type">INTEGER</text>
+      
+        <rect x="620" y="340" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="356" class="key" fill="#64748b"></text>
+        <text x="706" y="356" class="col">description</text>
+        <text x="898" y="356" class="type">VARCHAR(1000)</text>
+      
+        <rect x="620" y="364" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="380" class="key" fill="#64748b"></text>
+        <text x="706" y="380" class="col">created_at</text>
+        <text x="898" y="380" class="type">TIMESTAMP</text>
+      
+        <rect x="620" y="388" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="404" class="key" fill="#64748b"></text>
+        <text x="706" y="404" class="col">updated_at</text>
+        <text x="898" y="404" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-places">
+      <rect x="620" y="480" width="430" height="456" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="620" y="480" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="620" y="494" width="430" height="10" fill="#0f766e" />
+      <text x="634" y="497" class="group">C. Place</text>
+      <rect x="620" y="504" width="430" height="34" fill="#0f172a" />
+      <text x="634" y="527" class="name">places</text>
+      
+        <rect x="620" y="538" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="554" class="key" fill="#b45309">PK</text>
+        <text x="706" y="554" class="col">id</text>
+        <text x="898" y="554" class="type">BIGINT</text>
+      
+        <rect x="620" y="562" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="578" class="key" fill="#2563eb">FK</text>
+        <text x="706" y="578" class="col">region_id</text>
+        <text x="898" y="578" class="type">BIGINT</text>
+      
+        <rect x="620" y="586" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="602" class="key" fill="#64748b"></text>
+        <text x="706" y="602" class="col">name</text>
+        <text x="898" y="602" class="type">VARCHAR(150)</text>
+      
+        <rect x="620" y="610" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="626" class="key" fill="#64748b"></text>
+        <text x="706" y="626" class="col">address</text>
+        <text x="898" y="626" class="type">VARCHAR(255)</text>
+      
+        <rect x="620" y="634" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="650" class="key" fill="#64748b"></text>
+        <text x="706" y="650" class="col">latitude</text>
+        <text x="898" y="650" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="620" y="658" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="674" class="key" fill="#64748b"></text>
+        <text x="706" y="674" class="col">longitude</text>
+        <text x="898" y="674" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="620" y="682" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="698" class="key" fill="#64748b"></text>
+        <text x="706" y="698" class="col">category</text>
+        <text x="898" y="698" class="type">VARCHAR(40)</text>
+      
+        <rect x="620" y="706" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="722" class="key" fill="#64748b"></text>
+        <text x="706" y="722" class="col">is_local</text>
+        <text x="898" y="722" class="type">BOOLEAN</text>
+      
+        <rect x="620" y="730" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="746" class="key" fill="#64748b"></text>
+        <text x="706" y="746" class="col">is_traditional_market</text>
+        <text x="898" y="746" class="type">BOOLEAN</text>
+      
+        <rect x="620" y="754" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="770" class="key" fill="#64748b"></text>
+        <text x="706" y="770" class="col">is_core_spot</text>
+        <text x="898" y="770" class="type">BOOLEAN</text>
+      
+        <rect x="620" y="778" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="794" class="key" fill="#64748b"></text>
+        <text x="706" y="794" class="col">is_verifiable</text>
+        <text x="898" y="794" class="type">BOOLEAN</text>
+      
+        <rect x="620" y="802" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="818" class="key" fill="#64748b"></text>
+        <text x="706" y="818" class="col">estimated_cost</text>
+        <text x="898" y="818" class="type">INTEGER</text>
+      
+        <rect x="620" y="826" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="842" class="key" fill="#64748b"></text>
+        <text x="706" y="842" class="col">description</text>
+        <text x="898" y="842" class="type">VARCHAR(1000)</text>
+      
+        <rect x="620" y="850" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="866" class="key" fill="#64748b"></text>
+        <text x="706" y="866" class="col">image_url</text>
+        <text x="898" y="866" class="type">VARCHAR(500)</text>
+      
+        <rect x="620" y="874" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="890" class="key" fill="#64748b"></text>
+        <text x="706" y="890" class="col">created_at</text>
+        <text x="898" y="890" class="type">TIMESTAMP</text>
+      
+        <rect x="620" y="898" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="914" class="key" fill="#64748b"></text>
+        <text x="706" y="914" class="col">updated_at</text>
+        <text x="898" y="914" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-festivals">
+      <rect x="620" y="1030" width="430" height="288" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="620" y="1030" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="620" y="1044" width="430" height="10" fill="#0f766e" />
+      <text x="634" y="1047" class="group">C. Region</text>
+      <rect x="620" y="1054" width="430" height="34" fill="#0f172a" />
+      <text x="634" y="1077" class="name">festivals</text>
+      
+        <rect x="620" y="1088" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="1104" class="key" fill="#b45309">PK</text>
+        <text x="706" y="1104" class="col">id</text>
+        <text x="898" y="1104" class="type">BIGINT</text>
+      
+        <rect x="620" y="1112" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="1128" class="key" fill="#2563eb">FK</text>
+        <text x="706" y="1128" class="col">region_id</text>
+        <text x="898" y="1128" class="type">BIGINT</text>
+      
+        <rect x="620" y="1136" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="1152" class="key" fill="#64748b"></text>
+        <text x="706" y="1152" class="col">name</text>
+        <text x="898" y="1152" class="type">VARCHAR(150)</text>
+      
+        <rect x="620" y="1160" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="1176" class="key" fill="#64748b"></text>
+        <text x="706" y="1176" class="col">start_date</text>
+        <text x="898" y="1176" class="type">DATE</text>
+      
+        <rect x="620" y="1184" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="1200" class="key" fill="#64748b"></text>
+        <text x="706" y="1200" class="col">end_date</text>
+        <text x="898" y="1200" class="type">DATE</text>
+      
+        <rect x="620" y="1208" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="1224" class="key" fill="#64748b"></text>
+        <text x="706" y="1224" class="col">description</text>
+        <text x="898" y="1224" class="type">VARCHAR(1000)</text>
+      
+        <rect x="620" y="1232" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="1248" class="key" fill="#64748b"></text>
+        <text x="706" y="1248" class="col">location</text>
+        <text x="898" y="1248" class="type">VARCHAR(255)</text>
+      
+        <rect x="620" y="1256" width="430" height="24" fill="#f8fafc" />
+        <text x="634" y="1272" class="key" fill="#64748b"></text>
+        <text x="706" y="1272" class="col">created_at</text>
+        <text x="898" y="1272" class="type">TIMESTAMP</text>
+      
+        <rect x="620" y="1280" width="430" height="24" fill="#ffffff" />
+        <text x="634" y="1296" class="key" fill="#64748b"></text>
+        <text x="706" y="1296" class="col">updated_at</text>
+        <text x="898" y="1296" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-travel_etfs">
+      <rect x="1160" y="90" width="430" height="528" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1160" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1160" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="1174" y="107" class="group">A. ETF</text>
+      <rect x="1160" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="1174" y="137" class="name">travel_etfs</text>
+      
+        <rect x="1160" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="164" class="key" fill="#b45309">PK</text>
+        <text x="1246" y="164" class="col">id</text>
+        <text x="1438" y="164" class="type">BIGINT</text>
+      
+        <rect x="1160" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="188" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="188" class="col">owner_id</text>
+        <text x="1438" y="188" class="type">BIGINT</text>
+      
+        <rect x="1160" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="212" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="212" class="col">region_id</text>
+        <text x="1438" y="212" class="type">BIGINT</text>
+      
+        <rect x="1160" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="236" class="key" fill="#64748b"></text>
+        <text x="1246" y="236" class="col">title</text>
+        <text x="1438" y="236" class="type">VARCHAR(150)</text>
+      
+        <rect x="1160" y="244" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="260" class="key" fill="#64748b"></text>
+        <text x="1246" y="260" class="col">summary</text>
+        <text x="1438" y="260" class="type">VARCHAR(1000)</text>
+      
+        <rect x="1160" y="268" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="284" class="key" fill="#64748b"></text>
+        <text x="1246" y="284" class="col">status</text>
+        <text x="1438" y="284" class="type">VARCHAR(30)</text>
+      
+        <rect x="1160" y="292" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="308" class="key" fill="#64748b"></text>
+        <text x="1246" y="308" class="col">total_budget</text>
+        <text x="1438" y="308" class="type">INTEGER</text>
+      
+        <rect x="1160" y="316" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="332" class="key" fill="#64748b"></text>
+        <text x="1246" y="332" class="col">duration_days</text>
+        <text x="1438" y="332" class="type">INTEGER</text>
+      
+        <rect x="1160" y="340" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="356" class="key" fill="#64748b"></text>
+        <text x="1246" y="356" class="col">local_contribution_score</text>
+        <text x="1438" y="356" class="type">INTEGER</text>
+      
+        <rect x="1160" y="364" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="380" class="key" fill="#64748b"></text>
+        <text x="1246" y="380" class="col">region_value_score</text>
+        <text x="1438" y="380" class="type">INTEGER</text>
+      
+        <rect x="1160" y="388" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="404" class="key" fill="#64748b"></text>
+        <text x="1246" y="404" class="col">expected_reward</text>
+        <text x="1438" y="404" class="type">INTEGER</text>
+      
+        <rect x="1160" y="412" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="428" class="key" fill="#64748b"></text>
+        <text x="1246" y="428" class="col">thumbnail_url</text>
+        <text x="1438" y="428" class="type">VARCHAR(500)</text>
+      
+        <rect x="1160" y="436" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="452" class="key" fill="#64748b"></text>
+        <text x="1246" y="452" class="col">like_count</text>
+        <text x="1438" y="452" class="type">INTEGER</text>
+      
+        <rect x="1160" y="460" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="476" class="key" fill="#64748b"></text>
+        <text x="1246" y="476" class="col">scrap_count</text>
+        <text x="1438" y="476" class="type">INTEGER</text>
+      
+        <rect x="1160" y="484" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="500" class="key" fill="#64748b"></text>
+        <text x="1246" y="500" class="col">follow_count</text>
+        <text x="1438" y="500" class="type">INTEGER</text>
+      
+        <rect x="1160" y="508" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="524" class="key" fill="#64748b"></text>
+        <text x="1246" y="524" class="col">verification_count</text>
+        <text x="1438" y="524" class="type">INTEGER</text>
+      
+        <rect x="1160" y="532" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="548" class="key" fill="#64748b"></text>
+        <text x="1246" y="548" class="col">rating_average</text>
+        <text x="1438" y="548" class="type">DECIMAL(3,2)</text>
+      
+        <rect x="1160" y="556" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="572" class="key" fill="#64748b"></text>
+        <text x="1246" y="572" class="col">created_at</text>
+        <text x="1438" y="572" class="type">TIMESTAMP</text>
+      
+        <rect x="1160" y="580" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="596" class="key" fill="#64748b"></text>
+        <text x="1246" y="596" class="col">updated_at</text>
+        <text x="1438" y="596" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-travel_etf_style_tags">
+      <rect x="1160" y="710" width="430" height="144" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1160" y="710" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1160" y="724" width="430" height="10" fill="#0f766e" />
+      <text x="1174" y="727" class="group">A. ETF</text>
+      <rect x="1160" y="734" width="430" height="34" fill="#0f172a" />
+      <text x="1174" y="757" class="name">travel_etf_style_tags</text>
+      
+        <rect x="1160" y="768" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="784" class="key" fill="#b45309">PK/FK</text>
+        <text x="1246" y="784" class="col">travel_etf_id</text>
+        <text x="1438" y="784" class="type">BIGINT</text>
+      
+        <rect x="1160" y="792" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="808" class="key" fill="#b45309">PK/FK</text>
+        <text x="1246" y="808" class="col">style_tag_id</text>
+        <text x="1438" y="808" class="type">BIGINT</text>
+      
+        <rect x="1160" y="816" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="832" class="key" fill="#64748b"></text>
+        <text x="1246" y="832" class="col">created_at</text>
+        <text x="1438" y="832" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_itinerary_days">
+      <rect x="1160" y="910" width="430" height="192" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1160" y="910" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1160" y="924" width="430" height="10" fill="#0f766e" />
+      <text x="1174" y="927" class="group">A. ETF</text>
+      <rect x="1160" y="934" width="430" height="34" fill="#0f172a" />
+      <text x="1174" y="957" class="name">etf_itinerary_days</text>
+      
+        <rect x="1160" y="968" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="984" class="key" fill="#b45309">PK</text>
+        <text x="1246" y="984" class="col">id</text>
+        <text x="1438" y="984" class="type">BIGINT</text>
+      
+        <rect x="1160" y="992" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1008" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="1008" class="col">travel_etf_id</text>
+        <text x="1438" y="1008" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1016" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1032" class="key" fill="#64748b"></text>
+        <text x="1246" y="1032" class="col">day_number</text>
+        <text x="1438" y="1032" class="type">INTEGER</text>
+      
+        <rect x="1160" y="1040" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1056" class="key" fill="#64748b"></text>
+        <text x="1246" y="1056" class="col">created_at</text>
+        <text x="1438" y="1056" class="type">TIMESTAMP</text>
+      
+        <rect x="1160" y="1064" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1080" class="key" fill="#64748b"></text>
+        <text x="1246" y="1080" class="col">updated_at</text>
+        <text x="1438" y="1080" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_itinerary_items">
+      <rect x="1160" y="1160" width="430" height="336" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1160" y="1160" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1160" y="1174" width="430" height="10" fill="#0f766e" />
+      <text x="1174" y="1177" class="group">A. ETF</text>
+      <rect x="1160" y="1184" width="430" height="34" fill="#0f172a" />
+      <text x="1174" y="1207" class="name">etf_itinerary_items</text>
+      
+        <rect x="1160" y="1218" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1234" class="key" fill="#b45309">PK</text>
+        <text x="1246" y="1234" class="col">id</text>
+        <text x="1438" y="1234" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1242" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1258" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="1258" class="col">itinerary_day_id</text>
+        <text x="1438" y="1258" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1266" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1282" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="1282" class="col">place_id</text>
+        <text x="1438" y="1282" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1290" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1306" class="key" fill="#64748b"></text>
+        <text x="1246" y="1306" class="col">sequence</text>
+        <text x="1438" y="1306" class="type">INTEGER</text>
+      
+        <rect x="1160" y="1314" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1330" class="key" fill="#64748b"></text>
+        <text x="1246" y="1330" class="col">start_time</text>
+        <text x="1438" y="1330" class="type">TIME</text>
+      
+        <rect x="1160" y="1338" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1354" class="key" fill="#64748b"></text>
+        <text x="1246" y="1354" class="col">end_time</text>
+        <text x="1438" y="1354" class="type">TIME</text>
+      
+        <rect x="1160" y="1362" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1378" class="key" fill="#64748b"></text>
+        <text x="1246" y="1378" class="col">estimated_cost</text>
+        <text x="1438" y="1378" class="type">INTEGER</text>
+      
+        <rect x="1160" y="1386" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1402" class="key" fill="#64748b"></text>
+        <text x="1246" y="1402" class="col">is_core</text>
+        <text x="1438" y="1402" class="type">BOOLEAN</text>
+      
+        <rect x="1160" y="1410" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1426" class="key" fill="#64748b"></text>
+        <text x="1246" y="1426" class="col">memo</text>
+        <text x="1438" y="1426" class="type">VARCHAR(1000)</text>
+      
+        <rect x="1160" y="1434" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1450" class="key" fill="#64748b"></text>
+        <text x="1246" y="1450" class="col">created_at</text>
+        <text x="1438" y="1450" class="type">TIMESTAMP</text>
+      
+        <rect x="1160" y="1458" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1474" class="key" fill="#64748b"></text>
+        <text x="1246" y="1474" class="col">updated_at</text>
+        <text x="1438" y="1474" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_portfolio_ratios">
+      <rect x="1160" y="1540" width="430" height="336" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1160" y="1540" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1160" y="1554" width="430" height="10" fill="#0f766e" />
+      <text x="1174" y="1557" class="group">A. ETF</text>
+      <rect x="1160" y="1564" width="430" height="34" fill="#0f172a" />
+      <text x="1174" y="1587" class="name">etf_portfolio_ratios</text>
+      
+        <rect x="1160" y="1598" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1614" class="key" fill="#b45309">PK</text>
+        <text x="1246" y="1614" class="col">id</text>
+        <text x="1438" y="1614" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1622" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1638" class="key" fill="#2563eb">FK</text>
+        <text x="1246" y="1638" class="col">travel_etf_id</text>
+        <text x="1438" y="1638" class="type">BIGINT</text>
+      
+        <rect x="1160" y="1646" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1662" class="key" fill="#64748b"></text>
+        <text x="1246" y="1662" class="col">lodging_ratio</text>
+        <text x="1438" y="1662" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1670" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1686" class="key" fill="#64748b"></text>
+        <text x="1246" y="1686" class="col">food_ratio</text>
+        <text x="1438" y="1686" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1694" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1710" class="key" fill="#64748b"></text>
+        <text x="1246" y="1710" class="col">cafe_ratio</text>
+        <text x="1438" y="1710" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1718" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1734" class="key" fill="#64748b"></text>
+        <text x="1246" y="1734" class="col">activity_ratio</text>
+        <text x="1438" y="1734" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1742" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1758" class="key" fill="#64748b"></text>
+        <text x="1246" y="1758" class="col">festival_ratio</text>
+        <text x="1438" y="1758" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1766" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1782" class="key" fill="#64748b"></text>
+        <text x="1246" y="1782" class="col">local_store_ratio</text>
+        <text x="1438" y="1782" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1790" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1806" class="key" fill="#64748b"></text>
+        <text x="1246" y="1806" class="col">transport_ratio</text>
+        <text x="1438" y="1806" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1160" y="1814" width="430" height="24" fill="#f8fafc" />
+        <text x="1174" y="1830" class="key" fill="#64748b"></text>
+        <text x="1246" y="1830" class="col">created_at</text>
+        <text x="1438" y="1830" class="type">TIMESTAMP</text>
+      
+        <rect x="1160" y="1838" width="430" height="24" fill="#ffffff" />
+        <text x="1174" y="1854" class="key" fill="#64748b"></text>
+        <text x="1246" y="1854" class="col">updated_at</text>
+        <text x="1438" y="1854" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-design_sessions">
+      <rect x="1700" y="90" width="430" height="432" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1700" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1700" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="1714" y="107" class="group">B. Design</text>
+      <rect x="1700" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="1714" y="137" class="name">design_sessions</text>
+      
+        <rect x="1700" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="164" class="key" fill="#b45309">PK</text>
+        <text x="1786" y="164" class="col">id</text>
+        <text x="1978" y="164" class="type">BIGINT</text>
+      
+        <rect x="1700" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="188" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="188" class="col">user_id</text>
+        <text x="1978" y="188" class="type">BIGINT</text>
+      
+        <rect x="1700" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="212" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="212" class="col">source_etf_id</text>
+        <text x="1978" y="212" class="type">BIGINT</text>
+      
+        <rect x="1700" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="236" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="236" class="col">saved_etf_id</text>
+        <text x="1978" y="236" class="type">BIGINT</text>
+      
+        <rect x="1700" y="244" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="260" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="260" class="col">region_id</text>
+        <text x="1978" y="260" class="type">BIGINT</text>
+      
+        <rect x="1700" y="268" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="284" class="key" fill="#64748b"></text>
+        <text x="1786" y="284" class="col">status</text>
+        <text x="1978" y="284" class="type">VARCHAR(30)</text>
+      
+        <rect x="1700" y="292" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="308" class="key" fill="#64748b"></text>
+        <text x="1786" y="308" class="col">input_budget</text>
+        <text x="1978" y="308" class="type">INTEGER</text>
+      
+        <rect x="1700" y="316" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="332" class="key" fill="#64748b"></text>
+        <text x="1786" y="332" class="col">input_days</text>
+        <text x="1978" y="332" class="type">INTEGER</text>
+      
+        <rect x="1700" y="340" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="356" class="key" fill="#64748b"></text>
+        <text x="1786" y="356" class="col">input_people_count</text>
+        <text x="1978" y="356" class="type">INTEGER</text>
+      
+        <rect x="1700" y="364" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="380" class="key" fill="#64748b"></text>
+        <text x="1786" y="380" class="col">input_companion_type</text>
+        <text x="1978" y="380" class="type">VARCHAR(40)</text>
+      
+        <rect x="1700" y="388" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="404" class="key" fill="#64748b"></text>
+        <text x="1786" y="404" class="col">local_contribution_enabled</text>
+        <text x="1978" y="404" class="type">BOOLEAN</text>
+      
+        <rect x="1700" y="412" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="428" class="key" fill="#64748b"></text>
+        <text x="1786" y="428" class="col">ai_generated_raw_json</text>
+        <text x="1978" y="428" class="type">VARCHAR(4000)</text>
+      
+        <rect x="1700" y="436" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="452" class="key" fill="#64748b"></text>
+        <text x="1786" y="452" class="col">core_retention_rate</text>
+        <text x="1978" y="452" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="1700" y="460" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="476" class="key" fill="#64748b"></text>
+        <text x="1786" y="476" class="col">created_at</text>
+        <text x="1978" y="476" class="type">TIMESTAMP</text>
+      
+        <rect x="1700" y="484" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="500" class="key" fill="#64748b"></text>
+        <text x="1786" y="500" class="col">updated_at</text>
+        <text x="1978" y="500" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-design_session_style_tags">
+      <rect x="1700" y="590" width="430" height="144" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1700" y="590" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1700" y="604" width="430" height="10" fill="#0f766e" />
+      <text x="1714" y="607" class="group">B. Design</text>
+      <rect x="1700" y="614" width="430" height="34" fill="#0f172a" />
+      <text x="1714" y="637" class="name">design_session_style_tags</text>
+      
+        <rect x="1700" y="648" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="664" class="key" fill="#b45309">PK/FK</text>
+        <text x="1786" y="664" class="col">design_session_id</text>
+        <text x="1978" y="664" class="type">BIGINT</text>
+      
+        <rect x="1700" y="672" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="688" class="key" fill="#b45309">PK/FK</text>
+        <text x="1786" y="688" class="col">style_tag_id</text>
+        <text x="1978" y="688" class="type">BIGINT</text>
+      
+        <rect x="1700" y="696" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="712" class="key" fill="#64748b"></text>
+        <text x="1786" y="712" class="col">created_at</text>
+        <text x="1978" y="712" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-design_itinerary_days">
+      <rect x="1700" y="790" width="430" height="192" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1700" y="790" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1700" y="804" width="430" height="10" fill="#0f766e" />
+      <text x="1714" y="807" class="group">B. Design</text>
+      <rect x="1700" y="814" width="430" height="34" fill="#0f172a" />
+      <text x="1714" y="837" class="name">design_itinerary_days</text>
+      
+        <rect x="1700" y="848" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="864" class="key" fill="#b45309">PK</text>
+        <text x="1786" y="864" class="col">id</text>
+        <text x="1978" y="864" class="type">BIGINT</text>
+      
+        <rect x="1700" y="872" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="888" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="888" class="col">design_session_id</text>
+        <text x="1978" y="888" class="type">BIGINT</text>
+      
+        <rect x="1700" y="896" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="912" class="key" fill="#64748b"></text>
+        <text x="1786" y="912" class="col">day_number</text>
+        <text x="1978" y="912" class="type">INTEGER</text>
+      
+        <rect x="1700" y="920" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="936" class="key" fill="#64748b"></text>
+        <text x="1786" y="936" class="col">created_at</text>
+        <text x="1978" y="936" class="type">TIMESTAMP</text>
+      
+        <rect x="1700" y="944" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="960" class="key" fill="#64748b"></text>
+        <text x="1786" y="960" class="col">updated_at</text>
+        <text x="1978" y="960" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-design_itinerary_items">
+      <rect x="1700" y="1040" width="430" height="384" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="1700" y="1040" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="1700" y="1054" width="430" height="10" fill="#0f766e" />
+      <text x="1714" y="1057" class="group">B. Design</text>
+      <rect x="1700" y="1064" width="430" height="34" fill="#0f172a" />
+      <text x="1714" y="1087" class="name">design_itinerary_items</text>
+      
+        <rect x="1700" y="1098" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1114" class="key" fill="#b45309">PK</text>
+        <text x="1786" y="1114" class="col">id</text>
+        <text x="1978" y="1114" class="type">BIGINT</text>
+      
+        <rect x="1700" y="1122" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1138" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="1138" class="col">design_itinerary_day_id</text>
+        <text x="1978" y="1138" class="type">BIGINT</text>
+      
+        <rect x="1700" y="1146" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1162" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="1162" class="col">place_id</text>
+        <text x="1978" y="1162" class="type">BIGINT</text>
+      
+        <rect x="1700" y="1170" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1186" class="key" fill="#2563eb">FK</text>
+        <text x="1786" y="1186" class="col">source_item_id</text>
+        <text x="1978" y="1186" class="type">BIGINT</text>
+      
+        <rect x="1700" y="1194" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1210" class="key" fill="#64748b"></text>
+        <text x="1786" y="1210" class="col">sequence</text>
+        <text x="1978" y="1210" class="type">INTEGER</text>
+      
+        <rect x="1700" y="1218" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1234" class="key" fill="#64748b"></text>
+        <text x="1786" y="1234" class="col">start_time</text>
+        <text x="1978" y="1234" class="type">TIME</text>
+      
+        <rect x="1700" y="1242" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1258" class="key" fill="#64748b"></text>
+        <text x="1786" y="1258" class="col">end_time</text>
+        <text x="1978" y="1258" class="type">TIME</text>
+      
+        <rect x="1700" y="1266" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1282" class="key" fill="#64748b"></text>
+        <text x="1786" y="1282" class="col">estimated_cost</text>
+        <text x="1978" y="1282" class="type">INTEGER</text>
+      
+        <rect x="1700" y="1290" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1306" class="key" fill="#64748b"></text>
+        <text x="1786" y="1306" class="col">is_core</text>
+        <text x="1978" y="1306" class="type">BOOLEAN</text>
+      
+        <rect x="1700" y="1314" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1330" class="key" fill="#64748b"></text>
+        <text x="1786" y="1330" class="col">memo</text>
+        <text x="1978" y="1330" class="type">VARCHAR(1000)</text>
+      
+        <rect x="1700" y="1338" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1354" class="key" fill="#64748b"></text>
+        <text x="1786" y="1354" class="col">ai_reason</text>
+        <text x="1978" y="1354" class="type">VARCHAR(1000)</text>
+      
+        <rect x="1700" y="1362" width="430" height="24" fill="#f8fafc" />
+        <text x="1714" y="1378" class="key" fill="#64748b"></text>
+        <text x="1786" y="1378" class="col">created_at</text>
+        <text x="1978" y="1378" class="type">TIMESTAMP</text>
+      
+        <rect x="1700" y="1386" width="430" height="24" fill="#ffffff" />
+        <text x="1714" y="1402" class="key" fill="#64748b"></text>
+        <text x="1786" y="1402" class="col">updated_at</text>
+        <text x="1978" y="1402" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_likes">
+      <rect x="2240" y="90" width="430" height="168" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2240" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2240" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="2254" y="107" class="group">A. Social</text>
+      <rect x="2240" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="2254" y="137" class="name">etf_likes</text>
+      
+        <rect x="2240" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="164" class="key" fill="#b45309">PK</text>
+        <text x="2326" y="164" class="col">id</text>
+        <text x="2518" y="164" class="type">BIGINT</text>
+      
+        <rect x="2240" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="188" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="188" class="col">user_id</text>
+        <text x="2518" y="188" class="type">BIGINT</text>
+      
+        <rect x="2240" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="212" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="212" class="col">travel_etf_id</text>
+        <text x="2518" y="212" class="type">BIGINT</text>
+      
+        <rect x="2240" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="236" class="key" fill="#64748b"></text>
+        <text x="2326" y="236" class="col">created_at</text>
+        <text x="2518" y="236" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_scraps">
+      <rect x="2240" y="310" width="430" height="168" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2240" y="310" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2240" y="324" width="430" height="10" fill="#0f766e" />
+      <text x="2254" y="327" class="group">A. Social</text>
+      <rect x="2240" y="334" width="430" height="34" fill="#0f172a" />
+      <text x="2254" y="357" class="name">etf_scraps</text>
+      
+        <rect x="2240" y="368" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="384" class="key" fill="#b45309">PK</text>
+        <text x="2326" y="384" class="col">id</text>
+        <text x="2518" y="384" class="type">BIGINT</text>
+      
+        <rect x="2240" y="392" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="408" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="408" class="col">user_id</text>
+        <text x="2518" y="408" class="type">BIGINT</text>
+      
+        <rect x="2240" y="416" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="432" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="432" class="col">travel_etf_id</text>
+        <text x="2518" y="432" class="type">BIGINT</text>
+      
+        <rect x="2240" y="440" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="456" class="key" fill="#64748b"></text>
+        <text x="2326" y="456" class="col">created_at</text>
+        <text x="2518" y="456" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_follows">
+      <rect x="2240" y="530" width="430" height="192" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2240" y="530" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2240" y="544" width="430" height="10" fill="#0f766e" />
+      <text x="2254" y="547" class="group">A/B. Follow</text>
+      <rect x="2240" y="554" width="430" height="34" fill="#0f172a" />
+      <text x="2254" y="577" class="name">etf_follows</text>
+      
+        <rect x="2240" y="588" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="604" class="key" fill="#b45309">PK</text>
+        <text x="2326" y="604" class="col">id</text>
+        <text x="2518" y="604" class="type">BIGINT</text>
+      
+        <rect x="2240" y="612" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="628" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="628" class="col">user_id</text>
+        <text x="2518" y="628" class="type">BIGINT</text>
+      
+        <rect x="2240" y="636" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="652" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="652" class="col">source_etf_id</text>
+        <text x="2518" y="652" class="type">BIGINT</text>
+      
+        <rect x="2240" y="660" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="676" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="676" class="col">design_session_id</text>
+        <text x="2518" y="676" class="type">BIGINT</text>
+      
+        <rect x="2240" y="684" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="700" class="key" fill="#64748b"></text>
+        <text x="2326" y="700" class="col">created_at</text>
+        <text x="2518" y="700" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-etf_ratings">
+      <rect x="2240" y="780" width="430" height="216" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2240" y="780" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2240" y="794" width="430" height="10" fill="#0f766e" />
+      <text x="2254" y="797" class="group">A. Social</text>
+      <rect x="2240" y="804" width="430" height="34" fill="#0f172a" />
+      <text x="2254" y="827" class="name">etf_ratings</text>
+      
+        <rect x="2240" y="838" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="854" class="key" fill="#b45309">PK</text>
+        <text x="2326" y="854" class="col">id</text>
+        <text x="2518" y="854" class="type">BIGINT</text>
+      
+        <rect x="2240" y="862" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="878" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="878" class="col">user_id</text>
+        <text x="2518" y="878" class="type">BIGINT</text>
+      
+        <rect x="2240" y="886" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="902" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="902" class="col">travel_etf_id</text>
+        <text x="2518" y="902" class="type">BIGINT</text>
+      
+        <rect x="2240" y="910" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="926" class="key" fill="#64748b"></text>
+        <text x="2326" y="926" class="col">score</text>
+        <text x="2518" y="926" class="type">INTEGER</text>
+      
+        <rect x="2240" y="934" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="950" class="key" fill="#64748b"></text>
+        <text x="2326" y="950" class="col">created_at</text>
+        <text x="2518" y="950" class="type">TIMESTAMP</text>
+      
+        <rect x="2240" y="958" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="974" class="key" fill="#64748b"></text>
+        <text x="2326" y="974" class="col">updated_at</text>
+        <text x="2518" y="974" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-trip_executions">
+      <rect x="2240" y="1090" width="430" height="264" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2240" y="1090" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2240" y="1104" width="430" height="10" fill="#0f766e" />
+      <text x="2254" y="1107" class="group">C. Verification</text>
+      <rect x="2240" y="1114" width="430" height="34" fill="#0f172a" />
+      <text x="2254" y="1137" class="name">trip_executions</text>
+      
+        <rect x="2240" y="1148" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="1164" class="key" fill="#b45309">PK</text>
+        <text x="2326" y="1164" class="col">id</text>
+        <text x="2518" y="1164" class="type">BIGINT</text>
+      
+        <rect x="2240" y="1172" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="1188" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="1188" class="col">user_id</text>
+        <text x="2518" y="1188" class="type">BIGINT</text>
+      
+        <rect x="2240" y="1196" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="1212" class="key" fill="#2563eb">FK</text>
+        <text x="2326" y="1212" class="col">travel_etf_id</text>
+        <text x="2518" y="1212" class="type">BIGINT</text>
+      
+        <rect x="2240" y="1220" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="1236" class="key" fill="#64748b"></text>
+        <text x="2326" y="1236" class="col">status</text>
+        <text x="2518" y="1236" class="type">VARCHAR(40)</text>
+      
+        <rect x="2240" y="1244" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="1260" class="key" fill="#64748b"></text>
+        <text x="2326" y="1260" class="col">started_at</text>
+        <text x="2518" y="1260" class="type">TIMESTAMP</text>
+      
+        <rect x="2240" y="1268" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="1284" class="key" fill="#64748b"></text>
+        <text x="2326" y="1284" class="col">ended_at</text>
+        <text x="2518" y="1284" class="type">TIMESTAMP</text>
+      
+        <rect x="2240" y="1292" width="430" height="24" fill="#ffffff" />
+        <text x="2254" y="1308" class="key" fill="#64748b"></text>
+        <text x="2326" y="1308" class="col">created_at</text>
+        <text x="2518" y="1308" class="type">TIMESTAMP</text>
+      
+        <rect x="2240" y="1316" width="430" height="24" fill="#f8fafc" />
+        <text x="2254" y="1332" class="key" fill="#64748b"></text>
+        <text x="2326" y="1332" class="col">updated_at</text>
+        <text x="2518" y="1332" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-card_payment_events">
+      <rect x="2780" y="90" width="430" height="408" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2780" y="90" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2780" y="104" width="430" height="10" fill="#0f766e" />
+      <text x="2794" y="107" class="group">C. Payment</text>
+      <rect x="2780" y="114" width="430" height="34" fill="#0f172a" />
+      <text x="2794" y="137" class="name">card_payment_events</text>
+      
+        <rect x="2780" y="148" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="164" class="key" fill="#b45309">PK</text>
+        <text x="2866" y="164" class="col">id</text>
+        <text x="3058" y="164" class="type">BIGINT</text>
+      
+        <rect x="2780" y="172" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="188" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="188" class="col">user_id</text>
+        <text x="3058" y="188" class="type">BIGINT</text>
+      
+        <rect x="2780" y="196" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="212" class="key" fill="#64748b"></text>
+        <text x="2866" y="212" class="col">payment_provider</text>
+        <text x="3058" y="212" class="type">VARCHAR(40)</text>
+      
+        <rect x="2780" y="220" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="236" class="key" fill="#64748b"></text>
+        <text x="2866" y="236" class="col">merchant_name</text>
+        <text x="3058" y="236" class="type">VARCHAR(150)</text>
+      
+        <rect x="2780" y="244" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="260" class="key" fill="#64748b"></text>
+        <text x="2866" y="260" class="col">merchant_address</text>
+        <text x="3058" y="260" class="type">VARCHAR(255)</text>
+      
+        <rect x="2780" y="268" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="284" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="284" class="col">region_id</text>
+        <text x="3058" y="284" class="type">BIGINT</text>
+      
+        <rect x="2780" y="292" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="308" class="key" fill="#64748b"></text>
+        <text x="2866" y="308" class="col">category</text>
+        <text x="3058" y="308" class="type">VARCHAR(50)</text>
+      
+        <rect x="2780" y="316" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="332" class="key" fill="#64748b"></text>
+        <text x="2866" y="332" class="col">amount</text>
+        <text x="3058" y="332" class="type">INTEGER</text>
+      
+        <rect x="2780" y="340" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="356" class="key" fill="#64748b"></text>
+        <text x="2866" y="356" class="col">paid_at</text>
+        <text x="3058" y="356" class="type">TIMESTAMP</text>
+      
+        <rect x="2780" y="364" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="380" class="key" fill="#64748b"></text>
+        <text x="2866" y="380" class="col">latitude</text>
+        <text x="3058" y="380" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="2780" y="388" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="404" class="key" fill="#64748b"></text>
+        <text x="2866" y="404" class="col">longitude</text>
+        <text x="3058" y="404" class="type">DECIMAL(10,7)</text>
+      
+        <rect x="2780" y="412" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="428" class="key" fill="#64748b"></text>
+        <text x="2866" y="428" class="col">external_payment_id</text>
+        <text x="3058" y="428" class="type">VARCHAR(150)</text>
+      
+        <rect x="2780" y="436" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="452" class="key" fill="#64748b"></text>
+        <text x="2866" y="452" class="col">raw_payload</text>
+        <text x="3058" y="452" class="type">VARCHAR(4000)</text>
+      
+        <rect x="2780" y="460" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="476" class="key" fill="#64748b"></text>
+        <text x="2866" y="476" class="col">created_at</text>
+        <text x="3058" y="476" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-trip_verifications">
+      <rect x="2780" y="580" width="430" height="336" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2780" y="580" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2780" y="594" width="430" height="10" fill="#0f766e" />
+      <text x="2794" y="597" class="group">C. Verification</text>
+      <rect x="2780" y="604" width="430" height="34" fill="#0f172a" />
+      <text x="2794" y="627" class="name">trip_verifications</text>
+      
+        <rect x="2780" y="638" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="654" class="key" fill="#b45309">PK</text>
+        <text x="2866" y="654" class="col">id</text>
+        <text x="3058" y="654" class="type">BIGINT</text>
+      
+        <rect x="2780" y="662" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="678" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="678" class="col">trip_execution_id</text>
+        <text x="3058" y="678" class="type">BIGINT</text>
+      
+        <rect x="2780" y="686" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="702" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="702" class="col">payment_event_id</text>
+        <text x="3058" y="702" class="type">BIGINT</text>
+      
+        <rect x="2780" y="710" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="726" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="726" class="col">place_id</text>
+        <text x="3058" y="726" class="type">BIGINT</text>
+      
+        <rect x="2780" y="734" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="750" class="key" fill="#64748b"></text>
+        <text x="2866" y="750" class="col">verification_type</text>
+        <text x="3058" y="750" class="type">VARCHAR(50)</text>
+      
+        <rect x="2780" y="758" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="774" class="key" fill="#64748b"></text>
+        <text x="2866" y="774" class="col">status</text>
+        <text x="3058" y="774" class="type">VARCHAR(40)</text>
+      
+        <rect x="2780" y="782" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="798" class="key" fill="#64748b"></text>
+        <text x="2866" y="798" class="col">matched_score</text>
+        <text x="3058" y="798" class="type">DECIMAL(5,2)</text>
+      
+        <rect x="2780" y="806" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="822" class="key" fill="#64748b"></text>
+        <text x="2866" y="822" class="col">reason</text>
+        <text x="3058" y="822" class="type">VARCHAR(1000)</text>
+      
+        <rect x="2780" y="830" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="846" class="key" fill="#64748b"></text>
+        <text x="2866" y="846" class="col">verified_at</text>
+        <text x="3058" y="846" class="type">TIMESTAMP</text>
+      
+        <rect x="2780" y="854" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="870" class="key" fill="#64748b"></text>
+        <text x="2866" y="870" class="col">created_at</text>
+        <text x="3058" y="870" class="type">TIMESTAMP</text>
+      
+        <rect x="2780" y="878" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="894" class="key" fill="#64748b"></text>
+        <text x="2866" y="894" class="col">updated_at</text>
+        <text x="3058" y="894" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-reward_histories">
+      <rect x="2780" y="980" width="430" height="288" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2780" y="980" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2780" y="994" width="430" height="10" fill="#0f766e" />
+      <text x="2794" y="997" class="group">C. Reward</text>
+      <rect x="2780" y="1004" width="430" height="34" fill="#0f172a" />
+      <text x="2794" y="1027" class="name">reward_histories</text>
+      
+        <rect x="2780" y="1038" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1054" class="key" fill="#b45309">PK</text>
+        <text x="2866" y="1054" class="col">id</text>
+        <text x="3058" y="1054" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1062" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1078" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1078" class="col">user_id</text>
+        <text x="3058" y="1078" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1086" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1102" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1102" class="col">trip_execution_id</text>
+        <text x="3058" y="1102" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1110" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1126" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1126" class="col">region_id</text>
+        <text x="3058" y="1126" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1134" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1150" class="key" fill="#64748b"></text>
+        <text x="2866" y="1150" class="col">reward_type</text>
+        <text x="3058" y="1150" class="type">VARCHAR(50)</text>
+      
+        <rect x="2780" y="1158" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1174" class="key" fill="#64748b"></text>
+        <text x="2866" y="1174" class="col">point</text>
+        <text x="3058" y="1174" class="type">INTEGER</text>
+      
+        <rect x="2780" y="1182" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1198" class="key" fill="#64748b"></text>
+        <text x="2866" y="1198" class="col">reason</text>
+        <text x="3058" y="1198" class="type">VARCHAR(1000)</text>
+      
+        <rect x="2780" y="1206" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1222" class="key" fill="#64748b"></text>
+        <text x="2866" y="1222" class="col">calculated_at</text>
+        <text x="3058" y="1222" class="type">TIMESTAMP</text>
+      
+        <rect x="2780" y="1230" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1246" class="key" fill="#64748b"></text>
+        <text x="2866" y="1246" class="col">created_at</text>
+        <text x="3058" y="1246" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+
+    <g id="table-local_contributions">
+      <rect x="2780" y="1330" width="430" height="312" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.3" />
+      <rect x="2780" y="1330" width="430" height="24" rx="10" fill="#0f766e" />
+      <rect x="2780" y="1344" width="430" height="10" fill="#0f766e" />
+      <text x="2794" y="1347" class="group">C. Reward</text>
+      <rect x="2780" y="1354" width="430" height="34" fill="#0f172a" />
+      <text x="2794" y="1377" class="name">local_contributions</text>
+      
+        <rect x="2780" y="1388" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1404" class="key" fill="#b45309">PK</text>
+        <text x="2866" y="1404" class="col">id</text>
+        <text x="3058" y="1404" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1412" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1428" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1428" class="col">user_id</text>
+        <text x="3058" y="1428" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1436" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1452" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1452" class="col">region_id</text>
+        <text x="3058" y="1452" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1460" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1476" class="key" fill="#2563eb">FK</text>
+        <text x="2866" y="1476" class="col">trip_execution_id</text>
+        <text x="3058" y="1476" class="type">BIGINT</text>
+      
+        <rect x="2780" y="1484" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1500" class="key" fill="#64748b"></text>
+        <text x="2866" y="1500" class="col">contribution_score</text>
+        <text x="3058" y="1500" class="type">INTEGER</text>
+      
+        <rect x="2780" y="1508" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1524" class="key" fill="#64748b"></text>
+        <text x="2866" y="1524" class="col">local_payment_amount</text>
+        <text x="3058" y="1524" class="type">INTEGER</text>
+      
+        <rect x="2780" y="1532" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1548" class="key" fill="#64748b"></text>
+        <text x="2866" y="1548" class="col">traditional_market_payment_amount</text>
+        <text x="3058" y="1548" class="type">INTEGER</text>
+      
+        <rect x="2780" y="1556" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1572" class="key" fill="#64748b"></text>
+        <text x="2866" y="1572" class="col">verified_place_count</text>
+        <text x="3058" y="1572" class="type">INTEGER</text>
+      
+        <rect x="2780" y="1580" width="430" height="24" fill="#ffffff" />
+        <text x="2794" y="1596" class="key" fill="#64748b"></text>
+        <text x="2866" y="1596" class="col">calculated_at</text>
+        <text x="3058" y="1596" class="type">TIMESTAMP</text>
+      
+        <rect x="2780" y="1604" width="430" height="24" fill="#f8fafc" />
+        <text x="2794" y="1620" class="key" fill="#64748b"></text>
+        <text x="2866" y="1620" class="col">created_at</text>
+        <text x="3058" y="1620" class="type">TIMESTAMP</text>
+      
+    </g>
+  
+  </g>
+</svg>

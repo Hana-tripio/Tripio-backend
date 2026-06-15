@@ -1,10 +1,9 @@
 package com.tripio;
 
+import com.tripio.support.IntegrationTestSupport;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class TripioApplicationTests {
+class TripioApplicationTests extends IntegrationTestSupport {
 
     @Test
     void contextLoads() {
