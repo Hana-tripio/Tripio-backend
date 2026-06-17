@@ -27,7 +27,7 @@ Docker Compose는 다음 DB를 생성합니다.
 ```text
 host: localhost
 port: 5432
-database: tripio
+database: tripio_backend
 username: tripio
 password: tripio
 ```
