@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/tripio
+    url: jdbc:postgresql://localhost:5432/tripio_backend
     username: tripio
     password: tripio
     driver-class-name: org.postgresql.Driver
