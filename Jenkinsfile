@@ -110,12 +110,19 @@ spec:
             }
         }
 
-        stage('2. Test') {
+        stage('2. Test and build JAR') {
             steps {
                 container('jdk') {
                     sh '''
                       chmod +x ./gradlew
-                      ./gradlew clean test --no-daemon
+                      ./gradlew clean test bootJar --no-daemon
+
+                      JAR_FILE=$(find build/libs -maxdepth 1 -type f \
+                        -name '*.jar' ! -name '*-plain.jar' | head -n 1)
+
+                      test -n "$JAR_FILE"
+                      cp "$JAR_FILE" build/libs/app.jar
+                      ls -lh build/libs/app.jar
                     '''
                 }
             }
@@ -148,6 +155,8 @@ spec:
                         )
                     ]) {
                         sh '''
+                          test -f build/libs/app.jar
+
                           echo "$HARBOR_PW" \
                             | docker login "$HARBOR_URL" \
                               -u "$HARBOR_USER" \
