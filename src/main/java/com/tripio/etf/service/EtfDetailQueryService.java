@@ -26,6 +26,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class EtfDetailQueryService implements EtfService {
 
+    private static final String PUBLIC_STATUS = "PUBLIC";
+
     private final TravelEtfRepository travelEtfRepository;
     private final UserRepository userRepository;
     private final RegionRepository regionRepository;
@@ -36,7 +38,7 @@ public class EtfDetailQueryService implements EtfService {
 
     @Override
     public EtfDetailResponse getEtfDetail(Long etfId) {
-        TravelEtf travelEtf = travelEtfRepository.findById(etfId)
+        TravelEtf travelEtf = travelEtfRepository.findByIdAndStatus(etfId, PUBLIC_STATUS)
                 .orElseThrow(() -> new GeneralException(EtfErrorCode.ETF_NOT_FOUND));
         User owner = userRepository.findById(travelEtf.getOwnerId())
                 .orElseThrow(() -> new GeneralException(EtfErrorCode.ETF_NOT_FOUND));

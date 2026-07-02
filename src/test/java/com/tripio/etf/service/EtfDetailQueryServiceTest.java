@@ -110,7 +110,7 @@ class EtfDetailQueryServiceTest {
                 new BigDecimal("5.00")
         );
 
-        given(travelEtfRepository.findById(1L)).willReturn(Optional.of(travelEtf));
+        given(travelEtfRepository.findByIdAndStatus(1L, "PUBLIC")).willReturn(Optional.of(travelEtf));
         given(userRepository.findById(10L)).willReturn(Optional.of(owner));
         given(regionRepository.findById(20L)).willReturn(Optional.of(region));
         given(styleTagRepository.findTagNamesByTravelEtfId(1L)).willReturn(List.of("로컬푸드", "역사"));
@@ -136,7 +136,7 @@ class EtfDetailQueryServiceTest {
 
     @Test
     void getEtfDetailThrowsDomainExceptionWhenEtfNotFound() {
-        given(travelEtfRepository.findById(999L)).willReturn(Optional.empty());
+        given(travelEtfRepository.findByIdAndStatus(999L, "PUBLIC")).willReturn(Optional.empty());
 
         assertThatThrownBy(() -> etfDetailQueryService.getEtfDetail(999L))
                 .isInstanceOfSatisfying(GeneralException.class, exception ->

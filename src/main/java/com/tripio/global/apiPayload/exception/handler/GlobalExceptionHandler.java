@@ -9,6 +9,7 @@ import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -33,6 +34,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(GeneralErrorCode.VALIDATION_ERROR.getStatus())
                 .body(ApiResponse.onFailure(GeneralErrorCode.VALIDATION_ERROR, exception.getMessage()));
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<ApiResponse<Void>> handleMethodArgumentTypeMismatchException(
+            MethodArgumentTypeMismatchException exception
+    ) {
+        return ResponseEntity
+                .status(GeneralErrorCode.BAD_REQUEST.getStatus())
+                .body(ApiResponse.onFailure(GeneralErrorCode.BAD_REQUEST, null));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

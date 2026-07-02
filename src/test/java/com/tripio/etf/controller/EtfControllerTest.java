@@ -3,6 +3,7 @@ package com.tripio.etf.controller;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -103,5 +104,38 @@ class EtfControllerTest {
                 .andExpect(jsonPath("$.isSuccess", is(false)))
                 .andExpect(jsonPath("$.code", is("ETF404")))
                 .andExpect(jsonPath("$.message", is("ETF를 찾을 수 없습니다.")));
+    }
+
+    @Test
+    void getEtfDetailReturnsBadRequestWhenEtfIdIsNotNumber() throws Exception {
+        mockMvc.perform(get("/api/etfs/not-a-number"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.isSuccess", is(false)))
+                .andExpect(jsonPath("$.code", is("COMMON400")))
+                .andExpect(jsonPath("$.message", is("잘못된 요청입니다.")));
+
+        verifyNoInteractions(etfService);
+    }
+
+    @Test
+    void getEtfDetailReturnsValidationErrorWhenEtfIdIsZero() throws Exception {
+        mockMvc.perform(get("/api/etfs/{etfId}", 0))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.isSuccess", is(false)))
+                .andExpect(jsonPath("$.code", is("COMMON400_1")))
+                .andExpect(jsonPath("$.message", is("입력값 검증에 실패했습니다.")));
+
+        verifyNoInteractions(etfService);
+    }
+
+    @Test
+    void getEtfDetailReturnsValidationErrorWhenEtfIdIsNegative() throws Exception {
+        mockMvc.perform(get("/api/etfs/{etfId}", -1))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.isSuccess", is(false)))
+                .andExpect(jsonPath("$.code", is("COMMON400_1")))
+                .andExpect(jsonPath("$.message", is("입력값 검증에 실패했습니다.")));
+
+        verifyNoInteractions(etfService);
     }
 }
