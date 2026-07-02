@@ -1,14 +1,19 @@
 package com.tripio.etf.controller;
 
 import com.tripio.etf.dto.EtfDetailResponse;
+import com.tripio.etf.dto.EtfListResponse;
+import com.tripio.etf.dto.EtfSearchRequest;
+import com.tripio.etf.service.EtfSearchService;
 import com.tripio.etf.service.EtfService;
 import com.tripio.global.apiPayload.ApiResponse;
 import com.tripio.global.apiPayload.code.GeneralSuccessCode;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +25,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class EtfController {
 
     private final EtfService etfService;
+    private final EtfSearchService etfSearchService;
+
+    @GetMapping
+    public ResponseEntity<ApiResponse<EtfListResponse>> searchEtfs(
+            @Valid @ModelAttribute EtfSearchRequest request
+    ) {
+        EtfListResponse response = etfSearchService.searchEtfs(request);
+
+        return ResponseEntity
+                .status(GeneralSuccessCode.OK.getStatus())
+                .body(ApiResponse.onSuccess(GeneralSuccessCode.OK, response));
+    }
 
     @GetMapping("/{etfId}")
     public ResponseEntity<ApiResponse<EtfDetailResponse>> getEtfDetail(
