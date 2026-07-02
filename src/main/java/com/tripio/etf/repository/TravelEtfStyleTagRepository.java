@@ -17,4 +17,13 @@ public interface TravelEtfStyleTagRepository extends JpaRepository<TravelEtfStyl
             order by tag.name
             """)
     List<String> findTagNamesByTravelEtfId(@Param("travelEtfId") Long travelEtfId);
+
+    @Query("""
+            select new com.tripio.etf.repository.EtfStyleTagRow(mapping.travelEtfId, tag.name)
+            from TravelEtfStyleTag mapping
+            join StyleTag tag on tag.id = mapping.styleTagId
+            where mapping.travelEtfId in :travelEtfIds
+            order by mapping.travelEtfId, tag.name
+            """)
+    List<EtfStyleTagRow> findTagRowsByTravelEtfIds(@Param("travelEtfIds") List<Long> travelEtfIds);
 }

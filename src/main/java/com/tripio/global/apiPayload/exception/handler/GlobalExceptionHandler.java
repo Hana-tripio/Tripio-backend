@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -52,6 +53,19 @@ public class GlobalExceptionHandler {
         Map<String, String> errors = new LinkedHashMap<>();
         exception.getBindingResult().getFieldErrors()
                 .forEach(error -> errors.putIfAbsent(error.getField(), error.getDefaultMessage()));
+
+        return ResponseEntity
+                .status(GeneralErrorCode.VALIDATION_ERROR.getStatus())
+                .body(ApiResponse.onFailure(GeneralErrorCode.VALIDATION_ERROR, errors));
+    }
+
+    @ExceptionHandler(BindException.class)
+    public ResponseEntity<ApiResponse<Map<String, String>>> handleBindException(BindException exception) {
+        Map<String, String> errors = new LinkedHashMap<>();
+        exception.getBindingResult().getFieldErrors()
+                .forEach(error -> errors.putIfAbsent(error.getField(), error.getDefaultMessage()));
+        exception.getBindingResult().getGlobalErrors()
+                .forEach(error -> errors.putIfAbsent(error.getObjectName(), error.getDefaultMessage()));
 
         return ResponseEntity
                 .status(GeneralErrorCode.VALIDATION_ERROR.getStatus())
