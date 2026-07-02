@@ -114,4 +114,8 @@ public class TravelEtf {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+
+    public void synchronizeLikeCount(long likeCount) {
+        this.likeCount = Math.toIntExact(likeCount);
+    }
 }
