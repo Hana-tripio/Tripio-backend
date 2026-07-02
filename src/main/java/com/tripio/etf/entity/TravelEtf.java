@@ -122,4 +122,8 @@ public class TravelEtf {
     public void synchronizeScrapCount(long scrapCount) {
         this.scrapCount = Math.toIntExact(scrapCount);
     }
+
+    public void synchronizeRatingAverage(BigDecimal ratingAverage) {
+        this.ratingAverage = ratingAverage;
+    }
 }

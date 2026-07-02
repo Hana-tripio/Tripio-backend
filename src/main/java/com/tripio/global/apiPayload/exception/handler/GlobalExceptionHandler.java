@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -79,6 +80,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(GeneralErrorCode.UNSUPPORTED_MEDIA_TYPE.getStatus())
                 .body(ApiResponse.onFailure(GeneralErrorCode.UNSUPPORTED_MEDIA_TYPE, null));
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiResponse<Void>> handleHttpMessageNotReadableException(
+            HttpMessageNotReadableException exception
+    ) {
+        return ResponseEntity
+                .status(GeneralErrorCode.BAD_REQUEST.getStatus())
+                .body(ApiResponse.onFailure(GeneralErrorCode.BAD_REQUEST, null));
     }
 
     @ExceptionHandler({NoHandlerFoundException.class, NoResourceFoundException.class})
