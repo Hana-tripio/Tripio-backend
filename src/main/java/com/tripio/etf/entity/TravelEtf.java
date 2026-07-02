@@ -118,4 +118,8 @@ public class TravelEtf {
     public void synchronizeLikeCount(long likeCount) {
         this.likeCount = Math.toIntExact(likeCount);
     }
+
+    public void synchronizeScrapCount(long scrapCount) {
+        this.scrapCount = Math.toIntExact(scrapCount);
+    }
 }
