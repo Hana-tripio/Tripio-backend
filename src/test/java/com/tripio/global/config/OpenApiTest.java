@@ -1,5 +1,6 @@
 package com.tripio.global.config;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.hasKey;
 import static org.hamcrest.Matchers.hasSize;
@@ -34,5 +35,23 @@ class OpenApiTest extends IntegrationTestSupport {
                 .andExpect(jsonPath("$.components.securitySchemes['JWT TOKEN'].type", is("http")))
                 .andExpect(jsonPath("$.components.securitySchemes['JWT TOKEN'].scheme", is("bearer")))
                 .andExpect(jsonPath("$.components.securitySchemes['JWT TOKEN'].bearerFormat", is("JWT")));
+    }
+
+    @Test
+    void homeDiscoveryApiDocsExplainTemporaryRisingCriteria() throws Exception {
+        mockMvc.perform(get("/v3/api-docs"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath(
+                        "$.paths['/api/discovery/home'].get.summary",
+                        is("홈 화면 ETF 큐레이션 조회")
+                ))
+                .andExpect(jsonPath(
+                        "$.paths['/api/discovery/home'].get.description",
+                        containsString("실제 기간별 반응 증가량이 아닌")
+                ))
+                .andExpect(jsonPath(
+                        "$.components.schemas.HomeDiscoveryResponse.properties.risingEtfs.description",
+                        containsString("MVP 임시 급상승 ETF 목록")
+                ));
     }
 }
