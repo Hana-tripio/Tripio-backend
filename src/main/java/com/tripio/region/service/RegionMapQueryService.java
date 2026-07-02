@@ -2,6 +2,10 @@ package com.tripio.region.service;
 
 import com.tripio.global.apiPayload.code.GeneralErrorCode;
 import com.tripio.global.apiPayload.exception.GeneralException;
+import com.tripio.place.entity.Place;
+import com.tripio.place.repository.PlaceRepository;
+import com.tripio.region.dto.MapPlaceListResponse;
+import com.tripio.region.dto.MapPlaceResponse;
 import com.tripio.region.dto.MapRegionListResponse;
 import com.tripio.region.dto.MapRegionResponse;
 import com.tripio.region.entity.Region;
@@ -19,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class RegionMapQueryService implements RegionMapService {
 
     private final RegionRepository regionRepository;
+    private final PlaceRepository placeRepository;
 
     @Override
     public MapRegionListResponse getMapRegions(Long parentRegionId) {
@@ -27,6 +32,16 @@ public class RegionMapQueryService implements RegionMapService {
 
         return new MapRegionListResponse(regions.stream()
                 .map(region -> toResponse(region, parentIdsWithChildren))
+                .toList());
+    }
+
+    @Override
+    public MapPlaceListResponse getMapRegionPlaces(Long regionId) {
+        regionRepository.findById(regionId)
+                .orElseThrow(() -> new GeneralException(GeneralErrorCode.NOT_FOUND));
+
+        return new MapPlaceListResponse(placeRepository.findByRegionIdOrderByCoreSpotDescNameAsc(regionId).stream()
+                .map(this::toPlaceResponse)
                 .toList());
     }
 
@@ -63,6 +78,21 @@ public class RegionMapQueryService implements RegionMapService {
                 region.getPerScore(),
                 region.getLocalContributionBaseScore(),
                 parentIdsWithChildren.contains(region.getId())
+        );
+    }
+
+    private MapPlaceResponse toPlaceResponse(Place place) {
+        return new MapPlaceResponse(
+                place.getId(),
+                place.getName(),
+                place.getAddress(),
+                place.getLatitude(),
+                place.getLongitude(),
+                place.getCategory(),
+                place.isLocal(),
+                place.isCoreSpot(),
+                place.getImageUrl(),
+                place.getEstimatedCost()
         );
     }
 }

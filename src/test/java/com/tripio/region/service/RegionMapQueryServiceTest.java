@@ -8,6 +8,9 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 import com.tripio.global.apiPayload.code.GeneralErrorCode;
 import com.tripio.global.apiPayload.exception.GeneralException;
+import com.tripio.place.entity.Place;
+import com.tripio.place.repository.PlaceRepository;
+import com.tripio.region.dto.MapPlaceListResponse;
 import com.tripio.region.dto.MapRegionListResponse;
 import com.tripio.region.entity.Region;
 import com.tripio.region.repository.RegionRepository;
@@ -25,6 +28,9 @@ class RegionMapQueryServiceTest {
 
     @Mock
     private RegionRepository regionRepository;
+
+    @Mock
+    private PlaceRepository placeRepository;
 
     @InjectMocks
     private RegionMapQueryService regionMapQueryService;
@@ -77,6 +83,54 @@ class RegionMapQueryServiceTest {
         verifyNoMoreInteractions(regionRepository);
     }
 
+    @Test
+    void getMapRegionPlacesReturnsPlacesForExistingRegion() {
+        Region region = createRegion(20L, 10L, "공주시", "CITY", 36.4466, 127.1190, 52, 80);
+        Place market = createPlace(100L, 20L, "공주산성시장", "충남 공주시 산성시장", 36.4550, 127.1230,
+                "MARKET", true, true, "https://example.com/market.jpg", 15000);
+        Place cafe = createPlace(101L, 20L, "공주 한옥카페", "충남 공주시 한옥길", 36.4520, 127.1200,
+                "CAFE", false, false, "https://example.com/cafe.jpg", 9000);
+        given(regionRepository.findById(20L)).willReturn(Optional.of(region));
+        given(placeRepository.findByRegionIdOrderByCoreSpotDescNameAsc(20L)).willReturn(List.of(market, cafe));
+
+        MapPlaceListResponse response = regionMapQueryService.getMapRegionPlaces(20L);
+
+        assertThat(response.places()).extracting(place -> place.placeId()).containsExactly(100L, 101L);
+        assertThat(response.places().get(0).name()).isEqualTo("공주산성시장");
+        assertThat(response.places().get(0).address()).isEqualTo("충남 공주시 산성시장");
+        assertThat(response.places().get(0).latitude()).isEqualByComparingTo("36.4550000");
+        assertThat(response.places().get(0).longitude()).isEqualByComparingTo("127.1230000");
+        assertThat(response.places().get(0).category()).isEqualTo("MARKET");
+        assertThat(response.places().get(0).isLocal()).isTrue();
+        assertThat(response.places().get(0).isCoreSpot()).isTrue();
+        assertThat(response.places().get(0).imageUrl()).isEqualTo("https://example.com/market.jpg");
+        assertThat(response.places().get(0).estimatedCost()).isEqualTo(15000);
+    }
+
+    @Test
+    void getMapRegionPlacesReturnsEmptyListWhenRegionHasNoPlaces() {
+        Region region = createRegion(20L, 10L, "공주시", "CITY", 36.4466, 127.1190, 52, 80);
+        given(regionRepository.findById(20L)).willReturn(Optional.of(region));
+        given(placeRepository.findByRegionIdOrderByCoreSpotDescNameAsc(20L)).willReturn(List.of());
+
+        MapPlaceListResponse response = regionMapQueryService.getMapRegionPlaces(20L);
+
+        assertThat(response.places()).isEmpty();
+    }
+
+    @Test
+    void getMapRegionPlacesThrowsNotFoundWhenRegionDoesNotExist() {
+        given(regionRepository.findById(999L)).willReturn(Optional.empty());
+
+        assertThatThrownBy(() -> regionMapQueryService.getMapRegionPlaces(999L))
+                .isInstanceOf(GeneralException.class)
+                .extracting("code")
+                .isEqualTo(GeneralErrorCode.NOT_FOUND);
+
+        verify(regionRepository).findById(999L);
+        verifyNoMoreInteractions(regionRepository, placeRepository);
+    }
+
     private Region createRegion(
             Long id,
             Long parentRegionId,
@@ -96,6 +150,34 @@ class RegionMapQueryServiceTest {
                 BigDecimal.valueOf(longitude).setScale(7),
                 perScore,
                 localContributionBaseScore
+        );
+    }
+
+    private Place createPlace(
+            Long id,
+            Long regionId,
+            String name,
+            String address,
+            double latitude,
+            double longitude,
+            String category,
+            boolean isLocal,
+            boolean isCoreSpot,
+            String imageUrl,
+            int estimatedCost
+    ) {
+        return new Place(
+                id,
+                regionId,
+                name,
+                address,
+                BigDecimal.valueOf(latitude).setScale(7),
+                BigDecimal.valueOf(longitude).setScale(7),
+                category,
+                isLocal,
+                isCoreSpot,
+                imageUrl,
+                estimatedCost
         );
     }
 }

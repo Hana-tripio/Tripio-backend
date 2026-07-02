@@ -12,6 +12,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.tripio.global.apiPayload.code.GeneralErrorCode;
 import com.tripio.global.apiPayload.exception.GeneralException;
 import com.tripio.global.config.SecurityConfig;
+import com.tripio.region.dto.MapPlaceListResponse;
+import com.tripio.region.dto.MapPlaceResponse;
 import com.tripio.region.dto.MapRegionListResponse;
 import com.tripio.region.dto.MapRegionResponse;
 import com.tripio.region.service.RegionMapService;
@@ -110,5 +112,59 @@ class RegionMapControllerTest {
                 .andExpect(jsonPath("$.code", is("COMMON400_1")));
 
         verifyNoInteractions(regionMapService);
+    }
+
+    @Test
+    void getMapRegionPlacesReturnsMapPinsForRegion() throws Exception {
+        given(regionMapService.getMapRegionPlaces(20L)).willReturn(new MapPlaceListResponse(List.of(
+                new MapPlaceResponse(
+                        100L,
+                        "공주산성시장",
+                        "충남 공주시 산성시장",
+                        new BigDecimal("36.4550000"),
+                        new BigDecimal("127.1230000"),
+                        "MARKET",
+                        true,
+                        true,
+                        "https://example.com/place.jpg",
+                        15000
+                )
+        )));
+
+        mockMvc.perform(get("/api/map/regions/{regionId}/places", 20))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.isSuccess", is(true)))
+                .andExpect(jsonPath("$.code", is("COMMON200")))
+                .andExpect(jsonPath("$.result.places", hasSize(1)))
+                .andExpect(jsonPath("$.result.places[0].placeId", is(100)))
+                .andExpect(jsonPath("$.result.places[0].name", is("공주산성시장")))
+                .andExpect(jsonPath("$.result.places[0].address", is("충남 공주시 산성시장")))
+                .andExpect(jsonPath("$.result.places[0].latitude", is(36.4550000)))
+                .andExpect(jsonPath("$.result.places[0].longitude", is(127.1230000)))
+                .andExpect(jsonPath("$.result.places[0].category", is("MARKET")))
+                .andExpect(jsonPath("$.result.places[0].isLocal", is(true)))
+                .andExpect(jsonPath("$.result.places[0].isCoreSpot", is(true)))
+                .andExpect(jsonPath("$.result.places[0].imageUrl", is("https://example.com/place.jpg")))
+                .andExpect(jsonPath("$.result.places[0].estimatedCost", is(15000)));
+
+        verify(regionMapService).getMapRegionPlaces(20L);
+    }
+
+    @Test
+    void getMapRegionPlacesReturnsNotFoundWhenRegionDoesNotExist() throws Exception {
+        given(regionMapService.getMapRegionPlaces(999L)).willThrow(new GeneralException(GeneralErrorCode.NOT_FOUND));
+
+        mockMvc.perform(get("/api/map/regions/{regionId}/places", 999))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.isSuccess", is(false)))
+                .andExpect(jsonPath("$.code", is("COMMON404")));
+    }
+
+    @Test
+    void getMapRegionPlacesReturnsValidationErrorWhenRegionIdIsNotPositive() throws Exception {
+        mockMvc.perform(get("/api/map/regions/{regionId}/places", 0))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.isSuccess", is(false)))
+                .andExpect(jsonPath("$.code", is("COMMON400_1")));
     }
 }
